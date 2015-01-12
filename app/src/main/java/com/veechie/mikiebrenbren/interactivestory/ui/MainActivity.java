@@ -1,4 +1,4 @@
-package com.veechie.mikiebrenbren.interactivestory;
+package com.veechie.mikiebrenbren.interactivestory.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.veechie.mikiebrenbren.interactivestory.R;
 
 
 public class MainActivity extends Activity {
@@ -20,7 +22,6 @@ public class MainActivity extends Activity {
 
         mNameField = (EditText) findViewById(R.id.nameEditText);
         mStartButton = (Button) findViewById(R.id.startButton);
-
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,7 +34,6 @@ public class MainActivity extends Activity {
 
 
     private void startStory(String name){
-
         Intent intent = new Intent(this, StoryActivity.class);
         intent.putExtra(getString(R.string.key_name), name);
         startActivity(intent);
